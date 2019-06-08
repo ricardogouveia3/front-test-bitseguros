@@ -1,0 +1,134 @@
+.app__search {
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(#000, .2);
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  max-height: 80px;
+
+  @media screen and (max-width: 768px) { max-height: unset; }
+}
+
+.app__search__form {
+  display: flex;
+
+  @media screen and (max-width: 768px) { flex-direction: column; }
+}
+
+.app__search__cep-label {
+  display: block;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #22a6b3;
+}
+
+.app__search__cep-input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+  border-radius: 3px;
+  padding: 1ex 1ch;
+  border: 1px solid rgba(#000, .2);
+  width: 100%;
+}
+
+.app__search__cep-submit {
+  background-color: #6ab04c;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: .8em;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 1.6ex 15px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 768px) {
+    margin-left: unset;
+    margin-top: 10px;
+  }
+}
+
+.app__results {
+  flex-grow: 1;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgba(#000, .2);
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+
+.app__search__cep-label {
+  display: block;
+  font-size: .8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #22a6b3;
+}
+
+.app__results__empty {
+  text-align: center;
+}
+
+.app__results__empty__face {
+  display: inline-block;
+  color: #535c68;
+  transform: rotate(90deg);
+  opacity: .4;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1;
+  font-size: 6em;
+}
+
+.app__results__empty__text {
+  display: block;
+  color: #535c68;
+  opacity: .4;
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+.app__results__data {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app__results__data__title {
+  border-bottom: 2px solid rgba(#000000, .2);
+  color: #22a6b3;
+  display: block;
+  font-size: .8em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.app__results__data__field {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.app__results__data__field__desc {
+  display: block;
+  font-size: .75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #22a6b3;
+}

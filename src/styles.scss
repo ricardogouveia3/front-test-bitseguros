@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::after,
+*::before,
+html {
+  // sass-lint:disable-block no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  font-family: Roboto, 'Montserrat', 'Helvetica Neue', 'Helvetica', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+a { text-decoration: none; }
+
+body {
+  background-color: #22a6b3;
+  overflow-x: hidden;
+}
+
+.DEF_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.app__title {
+  text-align: center;
+  color: #fff;
+}
+
+.app-root {
+  display: flex;
+  justify-content: center;
+
+  @media screen and ( max-width: 768px ) { flex-direction: column; }
+}

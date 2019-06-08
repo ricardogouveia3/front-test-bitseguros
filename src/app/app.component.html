@@ -1,20 +1,64 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+  <section class="app__search">
+    <label class="app__search__cep-label" for="appSearchCEP">Insira o CEP:</label>
+    <div action="" class="app__search__form">
+      <input class="app__search__cep-input" type="number" name="searchCep" pattern="[0-9]{8}" minlength="8" maxlength="8" required #inputCep>
+      <button (click)="cepResults(inputCep.value)" class="app__search__cep-submit">Buscar</button>
+    </div>
+  </section>
 
+
+  <div *ngIf="result.erro || result.error;then empty else results"></div>
+
+  <ng-template #empty>
+    <section class="app__results">
+      <div class="app__results__empty" #empty>
+        <span class="app__results__empty__face">:(</span>
+        <span class="app__results__empty__text">Sem resultados a exibir</span>
+      </div>
+    </section>
+  </ng-template>
+
+  <ng-template #results>
+    <section class="app__results">
+      <div class="app__results__data" #results>
+        <span class="app__results__data__title">Resultado da busca:</span>
+        <div *ngIf="result.cep" class="app__results__data__field">
+          <span class="app__results__data__field__desc">CEP:</span>
+          <span class="app__results__data__field__info">{{result.cep}}</span>
+        </div>
+        <div *ngIf="result.logradouro" class="app__results__data__field">
+          <span class="app__results__data__field__desc">Logradouro:</span>
+          <span class="app__results__data__field__info">{{result.logradouro}}</span>
+        </div>
+        <div *ngIf="result.complemento" class="app__results__data__field">
+          <span class="app__results__data__field__desc">Complemento:</span>
+          <span class="app__results__data__field__info">{{result.complemento}}</span>
+        </div>
+        <div *ngIf="result.bairro" class="app__results__data__field">
+          <span class="app__results__data__field__desc">Bairro:</span>
+          <span class="app__results__data__field__info">{{result.bairro}}</span>
+        </div>
+        <div *ngIf="result.localidade" class="app__results__data__field">
+          <span class="app__results__data__field__desc">Localidade:</span>
+          <span class="app__results__data__field__info">{{result.localidade}}</span>
+        </div>
+        <div *ngIf="result.uf" class="app__results__data__field">
+          <span class="app__results__data__field__desc">UF:</span>
+          <span class="app__results__data__field__info">{{result.uf}}</span>
+        </div>
+        <div *ngIf="result.unidade" class="app__results__data__field">
+          <span class="app__results__data__field__desc">Unidade:</span>
+          <span class="app__results__data__field__info">{{result.unidade}}</span>
+        </div>
+        <div *ngIf="result.ibge" class="app__results__data__field">
+          <span class="app__results__data__field__desc">IBGE:</span>
+          <span class="app__results__data__field__info">{{result.ibge}}</span>
+        </div>
+        <div *ngIf="result.gia" class="app__results__data__field">
+          <span class="app__results__data__field__desc">GIA:</span>
+          <span class="app__results__data__field__info">{{result.gia}}</span>
+        </div>
+      </div>
+    </section>
+  </ng-template>
